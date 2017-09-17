@@ -12,7 +12,6 @@
  * Domain Path:       /languages
  */
 
-
 namespace pwa;
 
 // If this file is called directly, abort.
