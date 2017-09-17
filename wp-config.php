@@ -12,9 +12,9 @@
 
 
 /* MySQL settings */
-define( 'DB_NAME',     'octopusdrones' );
-define( 'DB_USER',     'root' );
-define( 'DB_PASSWORD', 'Msham83@' );
+define( 'DB_NAME',     'octopusdrone' );
+define( 'DB_USER',     'octopusdrone' );
+define( 'DB_PASSWORD', 'vedilActan' );
 define( 'DB_HOST',     'localhost' );
 define( 'DB_CHARSET',  'utf8mb4' );
 define( 'DB_COLLATE',   'utf8mb4_general_ci');
@@ -22,7 +22,6 @@ define( 'DB_COLLATE',   'utf8mb4_general_ci');
 
 /* MySQL database table prefix. */
 $table_prefix = 'shop_';
-
 
 /* Authentication Unique Keys and Salts. */
 define('AUTH_KEY',         'OnlB-:]6sxMCQ2:z(VB/-both*(O|icPBz{tjA`cJEw7P]x5ZBD0.n9hKJaVmb&.');
