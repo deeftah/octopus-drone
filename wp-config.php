@@ -55,13 +55,6 @@ define( 'COMPRESS_SCRIPTS',    true );
 define( 'CONCATENATE_SCRIPTS', true );
 define( 'ENFORCE_GZIP',        true );
 
-/* FTP */
-// define( 'FS_METHOD', 'ssh2' );
-// define( 'FTP_USER', 'devlcdr' );
-// define( 'FTP_PASS', 'slicshig2' );
-// define( 'FTP_HOST', 'lcdr.evolix.net' );
-// define( 'FTP_SSL', false );
-
 /* Updates */
 define( 'WP_AUTO_UPDATE_CORE', true );
 define( 'DISALLOW_FILE_EDIT', false );
