@@ -1,0 +1,10 @@
+*** Storefront Reviews Changelog ***
+
+2016.01.25 - version 1.0.2
+* Tweak - Removed deprecated function usage.
+
+2015.09.18 - version 1.0.1
+* Tweak - Use `Storefront_Custom_Radio_Image_Control` for the layout selector.
+
+2015.07.13 - version 1.0.0
+* Initial release

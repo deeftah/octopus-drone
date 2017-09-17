@@ -1,0 +1,37 @@
+*** Arcade Changelog ***
+
+2017.07.03 - version 2.1.3
+ * Fix - Invalid default body color.
+
+2017.06.06 - version 2.1.2
+ * Tweak - Further Storefront 2.2.0 compatibility tweaks.
+
+2017.02.15 - version 2.1.1
+ * Tweak - Storefront 2.2.0 compatibility.
+
+2016.11.10 - version 2.1.0
+ * Tweak - Removed legacy integrations with retired extensions.
+
+2016.08.15 - version 2.0.5
+ * Tweak - Storefront 2.1 compatibility.
+ * Fix - Cart link option in Storefront WooCommerce Customiser.
+
+2016.05.11 - version 2.0.4
+ * Tweak - Adopt Storefront 2.0's methods for applying default settings.
+ * Fix - Support for WordPress 4.5's custom logo feature.
+
+2016.04.15 - version 2.0.3
+ * Tweak - Adjusted the handling of the homepage product columns to support best selling products in Storefront 2.0.
+
+2016.03.18 - version 2.0.2
+ * Tweak - Storefront 2.0.0 compatibility.
+
+2016.02.24 - version 2.0.1
+ * Tweak - Storefront WooCommerce Customiser 2.0 compatibility.
+
+2016.02.17 - version 2.0.0
+ * New - Underlying code structure rewritten to use a more efficient class structure.
+ * New - Full RTL support
+
+2016.01.28 - version 1.0.0
+ * Initial release.
