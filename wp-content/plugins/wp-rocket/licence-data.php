@@ -9,10 +9,10 @@ defined( 'ABSPATH' ) or	die( 'Cheatin&#8217; uh?' );
 
 // Your license KEY.
 if ( ! defined( 'WP_ROCKET_KEY' ) ) {
-	define( 'WP_ROCKET_KEY', '10ae95ff');
+	define( 'WP_ROCKET_KEY', '9ea2cce3');
 }
 
 // Your email, the one you used for the purchase.
 if ( ! defined( 'WP_ROCKET_EMAIL' ) ) {
-	define( 'WP_ROCKET_EMAIL', 'marc.dobler@lcdr.ru' );
+	define( 'WP_ROCKET_EMAIL', 'azrael83fr@gmai.com' );
 }

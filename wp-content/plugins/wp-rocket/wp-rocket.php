@@ -20,7 +20,7 @@ defined( 'ABSPATH' ) or die( 'Cheatin&#8217; uh?' );
 
 // Rocket defines.
 define( 'WP_ROCKET_VERSION'             , '2.10.7' );
-define( 'WP_ROCKET_PRIVATE_KEY'         , 'a49b3c639d4bd133105df12f14dee3d4');
+define( 'WP_ROCKET_PRIVATE_KEY'         , '27a15aecd5bd8ed6471c627873d31b56');
 define( 'WP_ROCKET_SLUG'                , 'wp_rocket_settings' );
 define( 'WP_ROCKET_WEB_MAIN'            , 'https://wp-rocket.me/');
 define( 'WP_ROCKET_WEB_API'             , WP_ROCKET_WEB_MAIN . 'api/wp-rocket/' );
