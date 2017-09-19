@@ -28,6 +28,8 @@ if (! class_exists('Octopus_Drone')) :
         {
             add_action('wp_enqueue_scripts', array( $this, 'enqueue_styles' ));
             add_action('wp_enqueue_scripts', array( $this, 'enqueue_child_script' ), 99);
+            add_filter('the_generator', array( $this, 'remove_version_info'));
+            add_action('get_header',array( $this, 'remove_woocommerce_generator_tag'));
         }
 
         /**
@@ -56,6 +58,18 @@ if (! class_exists('Octopus_Drone')) :
             wp_register_script('pace_script', get_stylesheet_directory_uri() . '/assets/js/pace-lib.min.js', ['pace_lib'], $octopus_drone_version, true);
             wp_enqueue_script('pace_script');
         }
+
+        //Remove WordPress Generator Tag
+        public function remove_version_info() {
+          return '';
+        }
+
+        //Remove WooCommerce Generator Tag
+        public function remove_woocommerce_generator_tag()
+        {
+          remove_action('wp_head','wc_generator_tag');
+        }
+
     }
 endif;
 
