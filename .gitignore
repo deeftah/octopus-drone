@@ -100,5 +100,8 @@ wp-content/themes/twenty*/
 # ignore node/grunt dependency directories
 node_modules/
 
-# ignore wp-config file
+# ignore specific files root install
+wp-config.php
+sitemap.xml
+sitemap.xml.gz
 wp-config.php
