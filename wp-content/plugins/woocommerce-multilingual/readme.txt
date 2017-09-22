@@ -5,7 +5,7 @@ Tags: CMS, woocommerce, commerce, ecommerce, e-commerce, products, WPML, multili
 License: GPLv2
 Requires at least: 3.9
 Tested up to: 4.8.1
-Stable tag: 4.2.3
+Stable tag: 4.2.4
 
 Allows running fully multilingual e-commerce sites using WooCommerce and WPML.
 
@@ -141,6 +141,15 @@ WooCommerce Multilingual is compatible with all major WooCommerce extensions. We
 6. Shop URLs translation screen
 
 == Changelog ==
+
+= 4.2.4 =
+* Allow translating categories used in shortcodes when the simple tax query is used
+* Switching language/currency reset cart feature redirect to random product page after reset cart
+* Fixed and incompatibility issue with the WooCommerce EU VAT Number extension
+* Wrong prices in secondary currency when applying coupons
+* Fixed a bug that was preventing adding multiple products to cart after changing the site language and resetting the cart
+* Fixed an incompatibility issue with WooCommerce Bookings: the layout of the conformation prompt from switching the cart was broken.
+* Serialized custom fields were translated incorrectly using the WooCommerce Multilingual Translation Editor
 
 = 4.2.3 =
 * A fatal error occurred when deactivating WPML with WooCommerce Multilingual being active
