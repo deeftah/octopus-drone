@@ -211,6 +211,42 @@ class Admin
       );
 
       add_settings_field(
+        'manifest[splash_screens][0][src]',
+        __('Icons', 'pwa'),
+        [$this, 'echo_input_field'],
+        'menu-manifest',
+        'page_manifest',
+        [
+          'label_for' => 'manifest[icons][0][src]',
+          'type'  => 'media'
+        ]
+      );
+
+      add_settings_field(
+        'manifest[splash_screens][0][sizes]',
+        '',
+        [$this, 'echo_input_field'],
+        'menu-manifest',
+        'page_manifest',
+        [
+          'label_for' => 'manifest[icons][0][sizes]',
+          'type'  => 'hidden'
+        ]
+      );
+
+      add_settings_field(
+        'manifest[splash_screens][0][type]',
+        '',
+        [$this, 'echo_input_field'],
+        'menu-manifest',
+        'page_manifest',
+        [
+          'label_for'  => 'manifest[icons][0][type]',
+          'type'  => 'hidden'
+        ]
+      );
+
+      add_settings_field(
         'manifest[display]',
         __('Display', 'pwa'),
         [$this, 'echo_input_field'],
