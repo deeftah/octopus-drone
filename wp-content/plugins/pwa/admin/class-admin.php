@@ -212,12 +212,12 @@ class Admin
 
       add_settings_field(
         'manifest[splash_screens][0][src]',
-        __('Icons', 'pwa'),
+        __('Splash Screens', 'pwa'),
         [$this, 'echo_input_field'],
         'menu-manifest',
         'page_manifest',
         [
-          'label_for' => 'manifest[icons][0][src]',
+          'label_for' => 'manifest[splash_screens][0][src]',
           'type'  => 'media'
         ]
       );
@@ -229,7 +229,7 @@ class Admin
         'menu-manifest',
         'page_manifest',
         [
-          'label_for' => 'manifest[icons][0][sizes]',
+          'label_for' => 'manifest[splash_screens][0][sizes]',
           'type'  => 'hidden'
         ]
       );
@@ -241,7 +241,7 @@ class Admin
         'menu-manifest',
         'page_manifest',
         [
-          'label_for'  => 'manifest[icons][0][type]',
+          'label_for'  => 'manifest[splash_screens][0][type]',
           'type'  => 'hidden'
         ]
       );
