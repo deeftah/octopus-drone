@@ -28,7 +28,7 @@ if (! class_exists('Octopus_Drone')) :
         {
             add_action('wp_enqueue_scripts', array( $this, 'enqueue_styles' ));
             add_action('wp_enqueue_scripts', array( $this, 'enqueue_child_script' ), 99);
-            add_filter( 'navigation_markup_template', array( $this, 'navigation_markup_template' ) );
+            add_filter('navigation_markup_template', array( $this, 'navigation_markup_template' ) );
             add_filter('the_generator', array( $this, 'remove_version_info'));
             add_action('get_header',array( $this, 'remove_woocommerce_generator_tag'));
             add_filter('style_loader_src',  array( $this, 'removeVersion'));
@@ -43,9 +43,9 @@ if (! class_exists('Octopus_Drone')) :
          */
         public function enqueue_styles()
         {
-            global $storefront_version;
+            global $octopus_drone_version;
 
-            // wp_enqueue_style('storefront-style', get_template_directory_uri() . '/style.css', $storefront_version);
+            wp_enqueue_style('octopus-drone-style', get_stylesheet_directory_uri() . '/assets/css/app.min.css', $octopus_drone_version);
         }
 
         /**

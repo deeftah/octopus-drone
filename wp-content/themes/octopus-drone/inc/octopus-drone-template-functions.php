@@ -247,7 +247,7 @@ if ( ! function_exists( 'storefront_primary_navigation' ) ) {
 		?>
 		<nav id="site-navigation" class="main-navigation" aria-label="<?php esc_html_e( 'Primary Navigation', 'storefront' ); ?>">
 
-		<button class="menu-toggle" aria-controls="site-navigation" aria-expanded="false" aria-label="<?php echo esc_attr( apply_filters( 'storefront_menu_toggle_text', __( 'Menu', 'storefront' ) ) ); ?>"><span></span></button>
+		<button class="menu-toggle" aria-controls="site-navigation" aria-expanded="false" aria-label="<?php echo esc_attr( apply_filters( 'storefront_menu_toggle_text', __( 'Menu', 'storefront' ) ) ); ?>" aria-controls="navigation"><span></span></button>
 			<?php
 			wp_nav_menu(
 				array(

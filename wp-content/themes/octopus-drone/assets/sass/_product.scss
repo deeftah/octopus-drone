@@ -1,0 +1,55 @@
+@charset 'UTF-8';
+
+.site-main .products {
+  display: flex;
+  flex-wrap: wrap;
+
+  li.product {
+    @include material-shadow(1);
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 1.41575em;
+    overflow: hidden;
+    width: 46.8%;
+
+    img {
+      border-radius: 3px 3px 0 0;
+    }
+
+    & .button {
+      align-self: flex-end;
+      margin: 0 auto;
+    }
+
+    &:hover {
+      @include material-shadow(5);
+      transform: translateY(-5px);
+    }
+
+    .onsale {
+      position: absolute;
+      right: .5em;
+      top: .5em;
+    }
+
+    &:nth-child(2n) {
+      margin-right: 0;
+    }
+  }
+}
+
+ul.products li.product .woocommerce-LoopProduct-link {
+  overflow: hidden;
+}
+
+ul.products li.product .woocommerce-loop-product__title,
+ul.products li.product h2,
+ul.products li.product h3 {
+  margin: {
+    left: 1em;
+    right: 1em;
+  }
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
