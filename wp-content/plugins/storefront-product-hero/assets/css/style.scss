@@ -30,6 +30,7 @@ body,
 	p.more-details,
 	p.add_to_cart_inline {
 		display: block;
+		text-align: left;
 	}
 
 	p.add_to_cart_inline {
@@ -68,8 +69,11 @@ body,
 	margin-right: auto;
 }
 
-.sprh-hero h1 {
+.sprh-hero h3 {
 	font-weight: 700;
+	font-size: 2.617924em;
+	line-height: 1.214;
+	letter-spacing: -1px;
 }
 
 .sprh-hero p:last-child {
@@ -97,19 +101,19 @@ body,
 	}
 
 	.sprh-hero.left p,
-	.sprh-hero.left h1 {
+	.sprh-hero.left h3 {
 		margin-left: 0;
 		margin-right: 40%;
 	}
 
 	.sprh-hero.right p,
-	.sprh-hero.right h1 {
+	.sprh-hero.right h3 {
 		margin-right: 0;
 		margin-left: 40%;
 	}
 
 	.sprh-hero p,
-	.sprh-hero h1 {
+	.sprh-hero h3 {
 		margin-left: 10%;
 		margin-right: 10%;
 	}
@@ -123,7 +127,7 @@ body,
 		}
 
 		p,
-		h1,
+		h3,
 		.sprh-featured-image img,
 		.star-rating {
 			margin-left: 0;
@@ -172,7 +176,7 @@ body,
 			}
 
 			p,
-			h1 {
+			h3 {
 				margin-left: 0;
 				margin-right: 0;
 			}

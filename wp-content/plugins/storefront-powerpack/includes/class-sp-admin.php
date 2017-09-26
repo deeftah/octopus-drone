@@ -50,7 +50,7 @@ if ( ! class_exists( 'SP_Admin' ) ) :
 			$screen_id = $screen ? $screen->id : '';
 
 			if ( 'product' === $screen_id ) {
-				wp_enqueue_style( 'sp-product-admin', plugins_url( '../assets/css/admin.css', __FILE__ ), '', '1.0.0' );
+				wp_enqueue_style( 'sp-product-admin', SP_PLUGIN_URL . 'assets/css/admin.css', '', '1.0.0' );
 			}
 		}
 

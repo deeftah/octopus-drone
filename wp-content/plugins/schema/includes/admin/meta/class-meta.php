@@ -34,6 +34,7 @@ function custom_meta_box_field( $field, $meta = null, $repeatable = null ) {
 	$placeholder = isset( $field['placeholder'] ) ? $field['placeholder'] : null;
 	$place = isset( $field['place'] ) ? $field['place'] : null;
 	$size = isset( $field['size'] ) ? $field['size'] : 'regular';
+	$class = isset( $field['class'] ) ? $field['class'] : '';
 	$post_type = isset( $field['post_type'] ) ? $field['post_type'] : null;
 	$options = isset( $field['options'] ) ? $field['options'] : null;
 	$settings = isset( $field['settings'] ) ? $field['settings'] : null;
@@ -77,20 +78,20 @@ function custom_meta_box_field( $field, $meta = null, $repeatable = null ) {
 		case 'tel':
 		case 'email':
 		default:
-			echo '<input type="' . $type . '" name="' . esc_attr( $name ) . '" id="' . esc_attr( $id ) . '" value="' . esc_attr( $meta ) . '" class="'.$size.'-text" size="30" placeholder="' . $placeholder . '" />
+			echo '<input type="' . $type . '" name="' . esc_attr( $name ) . '" id="' . esc_attr( $id ) . '" value="' . esc_attr( $meta ) . '" class="'.$size.'-text '.$class.'" size="30" placeholder="' . $placeholder . '" />
 					<br />' . $desc;
 		break;
 		case 'url':
-			echo '<input type="' . $type . '" name="' . esc_attr( $name ) . '" id="' . esc_attr( $id ) . '" placeholder="' . $placeholder . '" value="' . esc_url( $meta ) . '" class="regular-text" size="30" />
+			echo '<input type="' . $type . '" name="' . esc_attr( $name ) . '" id="' . esc_attr( $id ) . '" placeholder="' . $placeholder . '" value="' . esc_url( $meta ) . '" class="regular-text '.$class.'" size="30" />
 					<br />' . $desc;
 		break;
 		case 'number':
-			echo '<input type="' . $type . '" name="' . esc_attr( $name ) . '" id="' . esc_attr( $id ) . '" value="' . intval( $meta ) . '" class="'.$size.'-text" size="30" />
+			echo '<input type="' . $type . '" name="' . esc_attr( $name ) . '" id="' . esc_attr( $id ) . '" value="' . intval( $meta ) . '" class="'.$size.'-text '.$class.'" size="30" />
 					<br />' . $desc;
 		break;
 		// textarea
 		case 'textarea':
-			echo '<textarea name="' . esc_attr( $name ) . '" id="' . esc_attr( $id ) . '" placeholder="' . $placeholder . '" cols="60" rows="4">' . esc_textarea( $meta ) . '</textarea>
+			echo '<textarea name="' . esc_attr( $name ) . '" id="' . esc_attr( $id ) . '" placeholder="' . $placeholder . '" cols="60" rows="4" class="'.$class.'">' . esc_textarea( $meta ) . '</textarea>
 					<br />' . $desc;
 		break;
 		// editor
@@ -110,7 +111,7 @@ function custom_meta_box_field( $field, $meta = null, $repeatable = null ) {
 				$meta = isset($field['default']) ? $field['default'] : '';
 			}
 			
-			echo '<select name="' . esc_attr( $name ) . '" id="' . esc_attr( $id ) . '"' , $type == 'chosen' ? ' class="chosen"' : '' , isset( $multiple ) && $multiple == true ? ' multiple="multiple"' : '' , '>
+			echo '<select name="' . esc_attr( $name ) . '" id="' . esc_attr( $id ) . '"' , $type == 'chosen' ? ' class="'.$class.' chosen"' : ' class="'.$class.'"' , isset( $multiple ) && $multiple == true ? ' multiple="multiple"' : '' , '>
 					<option value="">' . $selectone . '</option>'; // Select One
 			foreach ( $options as $option )
 				echo '<option' . selected( $meta, $option['value'], false ) . ' value="' . $option['value'] . '">' . $option['label'] . '</option>';

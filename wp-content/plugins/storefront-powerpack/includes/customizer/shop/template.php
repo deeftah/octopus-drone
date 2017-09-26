@@ -14,7 +14,13 @@ if ( ! function_exists( 'sp_loop_product_description' ) ) {
 	function sp_loop_product_description() {
 		global $product;
 
-		$short_description = apply_filters( 'woocommerce_short_description', $product->post->post_excerpt );
+		$wc_product = wc_get_product( $product );
+
+		if ( ! $wc_product ) {
+			return false;
+		}
+
+		$short_description = $wc_product->get_short_description();
 
 		if ( '' !== $short_description ) {
 			echo '<div itemprop="description">' . wp_kses_post( $short_description ) . '</div>';

@@ -3,9 +3,9 @@ Contributors: hishaman, schemapress
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=NGVUBT2QXN7YL
 Tags: schema, schema.org, json, json-ld, google, seo, structured data, markup, search engine, search, rich snippets, social, post, page, plugin, wordpress, content, article, news, search results, site name, knowledge graph, social, social profiles, keywords, meta-tags, metadata, tags, categories, optimize, ranking, search engine optimization, search engines, serp, sitelinks, google sitelinks, sitelinks search box, google sitelinks search box, semantic, structured, canonical, custom post types, post type, title, terms, media, images, thumb, featured, url, video, video markup, video object, VideoObject, video schema, audio object, AudioObject, audio schema, audio, sameAs, about, contact, amp, mobile
 Requires at least: 4.0
-Tested up to: 4.8.1
+Tested up to: 4.8.2
 Requires PHP: 5.4
-Stable tag: 1.6.9.2
+Stable tag: 1.6.9.3
 
 Get the next generation of Schema Structured Data to enhance your WordPress site presentation in Google search results.
 
@@ -100,6 +100,21 @@ Feel free to [fork the project on GitHub](https://github.com/schemapress/Schema)
 
 Post detailed information about the issue in the [support forum](https://wordpress.org/support/plugin/schema) and we will work to fix it.
 
+= Is there any Documentation for this plugin? =
+
+Indeed, detailed information about the plugin can be found on the [documentation section](https://schema.press/docs/) on our website.
+
+= Are you going to add support for new schema.org types in the future? =
+
+Nope! The Schema plugin is meant to add markup to a basic WordPress installation, including those types (mostly Article, BlogPosting) which needs to be supported on a fresh install. 
+
+Other schema.org types shall be added via [documentation section](https://schema.press/downloads/), or a custom code.
+
+
+= Is there a way to add a new schema.org type? =
+
+Luckily… Yes! Schema plugin has a filter which can be used to [add support for new schema.org types](https://schema.press/docs/adding-support-new-schema-org-types/).
+
 = Knowledge Graph is not showing? =
 
 The plugin meant to validate markup in Google Structured Data Testing Tool, we don’t have control over the actual display of Knowledge Graph.
@@ -126,6 +141,17 @@ Yes, Schema plugin will detect AMP plugin and output a more complete and valid s
 4. Google Structured Data Testing Tool.
 
 == Changelog ==
+
+= 1.6.9.3 =
+* Fixed a bug in Yoast SEO integration while checking if plugin is active.
+* Fixed a warning showing when original post status is not set.
+* Fixed a warning when use the Quick Edit screen, could not retrieve post type.
+* Fixed input field styles in post meta.
+* Added new filter schema_wp_filter_description_word_count for description words count.
+* Added new property for post meta called class, to allow styling and targeting inputs.
+* Added new custom Bootstrap 4 styles to be used by extensions.
+* Extended readme.txt file FAQ section with more details about the plugin.
+* Pumped tested version to 4.8.2
 
 = 1.6.9.2 =
 * Fixed post meta fields array, it was not defined properly.
@@ -482,6 +508,9 @@ Yes, Schema plugin will detect AMP plugin and output a more complete and valid s
 * Initial Release
 
 == Upgrade Notice ==
+
+= 1.6.9.3 =
+This update include several bug fixes and new enhancements. Please, update the plugin on your site to get these fixes and enhancements.
 
 = 1.6.9.2 =
 This update include several bug fixes and new enhancements. Please, update the plugin on your site to get these fixes and enhancements.

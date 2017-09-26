@@ -41,6 +41,13 @@ require 'inc/octopus-drone-template-functions.php';
 // include_once( 'inc/class-arcade-integrations.php' );
 // include_once( 'inc/plugged.php' );
 
+// if ( storefront_is_woocommerce_activated() ) {
+	// $storefront->woocommerce = require 'inc/woocommerce/class-storefront-woocommerce.php';
+
+	// require 'inc/woocommerce/octopus-drone-woocommerce-template-hooks.php';
+	// require 'inc/woocommerce/storefront-woocommerce-template-functions.php';
+// }
+
 /**
  * Do not add custom code / snippets here.
  * While Child Themes are generally recommended for customisations, in this case it is not

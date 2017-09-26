@@ -1,0 +1,13 @@
+@charset 'UTF-8';
+
+* {
+  transition: .2s ease-out;
+}
+
+input {
+  border-radius: 3px;
+}
+
+.page-template-template-homepage:not(.has-post-thumbnail) .site-main {
+    padding-top: 0 !important;
+}

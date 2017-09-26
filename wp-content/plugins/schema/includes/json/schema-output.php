@@ -224,9 +224,6 @@ function schema_wp_get_schema_json_prepare( $post_id = null ) {
 	// Get post content
 	$content_post		= get_post($post_id);
 	
-	// Debug
-	//echo '<pre>'; print_r($content_post); echo '</pre>';
-	
 	// Get description
 	$full_content		= $content_post->post_content;
 	$excerpt			= $content_post->post_excerpt;
@@ -242,7 +239,8 @@ function schema_wp_get_schema_json_prepare( $post_id = null ) {
 	// @since 1.5.9
 	$full_content 		= apply_filters( 'schema_wp_filter_content', $full_content );
 	
-	$short_content		= wp_trim_words( $full_content, 49, '' ); 
+	$desc_word_count	= apply_filters ( 'schema_wp_filter_description_word_count', 49 );
+	$short_content		= wp_trim_words( $full_content, $desc_word_count, '' ); 
 	$description		= apply_filters ( 'schema_wp_filter_description', ( $excerpt != '' ) ? $excerpt : $short_content ); 
 	
 	// Stuff for any page, if it exists
@@ -260,7 +258,7 @@ function schema_wp_get_schema_json_prepare( $post_id = null ) {
 	$json['description']	= $description;
 	$json['permalink']		= $permalink;
 	
-	$json["datePublished"]	= get_the_date( 'c', $post_id);
+	$json["datePublished"]	= get_the_date( 'c', $post_id );
 	$json["dateModified"]	= get_post_modified_time( 'c', false, $post_id, false );
 	
 	$json['category']		= $category;

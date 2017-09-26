@@ -129,11 +129,11 @@ if ( ! class_exists( 'SP_Designer' ) ) :
 		 */
 		public function scripts() {
 			$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
-			wp_enqueue_script( 'sp-designer-js', plugins_url( '/assets/js/sp-designer' . $suffix . '.js', __FILE__ ), array( 'jquery', 'wp-backbone', 'customize-controls' ), storefront_powerpack()->version, true );
-			wp_enqueue_style( 'sp-designer-css', plugins_url( '/assets/css/sp-designer.css', __FILE__ ), array(), storefront_powerpack()->version, 'all' );
+			wp_enqueue_script( 'sp-designer-js', SP_PLUGIN_URL . 'includes/customizer/designer/assets/js/sp-designer' . $suffix . '.js', array( 'jquery', 'wp-backbone', 'customize-controls' ), storefront_powerpack()->version, true );
+			wp_enqueue_style( 'sp-designer-css', SP_PLUGIN_URL . 'includes/customizer/designer/assets/css/sp-designer.css', array(), storefront_powerpack()->version, 'all' );
 
-			wp_enqueue_script( 'selectize-js', plugins_url( '/assets/js/vendor/selectize.min.js', __FILE__ ), array( 'jquery', 'wp-backbone', 'customize-controls' ), storefront_powerpack()->version, true );
-			wp_enqueue_style( 'selectize-css', plugins_url( '/assets/js/vendor/selectize.min.css', __FILE__ ), array(), storefront_powerpack()->version, 'all' );
+			wp_enqueue_script( 'selectize-js', SP_PLUGIN_URL . 'includes/customizer/designer/assets/js/vendor/selectize.min.js', array( 'jquery', 'wp-backbone', 'customize-controls' ), storefront_powerpack()->version, true );
+			wp_enqueue_style( 'selectize-css', SP_PLUGIN_URL . 'includes/customizer/designer/assets/js/vendor/selectize.min.css', array(), storefront_powerpack()->version, 'all' );
 		}
 
 		/**
@@ -154,8 +154,8 @@ if ( ! class_exists( 'SP_Designer' ) ) :
 		 */
 		public function customize_preview_enqueue() {
 			$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
-			wp_enqueue_script( 'sp-designer-preview-js', plugins_url( '/assets/js/sp-designer-preview' . $suffix . '.js', __FILE__ ), array( 'jquery','customize-preview' ), storefront_powerpack()->version, true );
-			wp_enqueue_script( 'webfont-js', plugins_url( '/assets/js/vendor/webfont.js', __FILE__ ), array( 'customize-preview' ), '1.6.16', true );
+			wp_enqueue_script( 'sp-designer-preview-js', SP_PLUGIN_URL . 'includes/customizer/designer/assets/js/sp-designer-preview' . $suffix . '.js', array( 'jquery','customize-preview' ), storefront_powerpack()->version, true );
+			wp_enqueue_script( 'webfont-js', SP_PLUGIN_URL . 'includes/customizer/designer/assets/js/vendor/webfont.js', array( 'customize-preview' ), '1.6.16', true );
 
 			$web_fonts = array();
 
@@ -171,7 +171,7 @@ if ( ! class_exists( 'SP_Designer' ) ) :
 			$data = sprintf( 'var _wpCustomizeSPDesignerPreviewSettings = %s;', wp_json_encode( $settings ) );
 			wp_scripts()->add_data( 'sp-designer-preview-js', 'data', $data );
 
-			wp_enqueue_style( 'sp-designer-preview-css', plugins_url( '/assets/css/sp-designer-preview.css', __FILE__ ), array(), storefront_powerpack()->version, 'all' );
+			wp_enqueue_style( 'sp-designer-preview-css', SP_PLUGIN_URL . 'includes/customizer/designer/assets/css/sp-designer-preview.css', array(), storefront_powerpack()->version, 'all' );
 		}
 
 		/**
@@ -193,8 +193,8 @@ if ( ! class_exists( 'SP_Designer' ) ) :
 				}
 
 				$font_variants[] = array(
-					'family'       => $font['family'],
-					'variants'     => $variants,
+					'family'   => $font['family'],
+					'variants' => $variants,
 				);
 			}
 

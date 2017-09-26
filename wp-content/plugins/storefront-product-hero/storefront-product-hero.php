@@ -3,7 +3,7 @@
  * Plugin Name:			Storefront Product Hero
  * Plugin URI:			http://woothemes.com/products/storefront-product-hero/
  * Description:			Display styling parallax product hero components on your web pages.
- * Version:				1.2.11
+ * Version:				1.2.13
  * Author:				WooThemes
  * Author URI:			http://woothemes.com/
  * Requires at least:	4.5.0
@@ -95,7 +95,7 @@ final class Storefront_Product_Hero {
 		$this->token 			= 'storefront-product-hero';
 		$this->plugin_url 		= plugin_dir_url( __FILE__ );
 		$this->plugin_path 		= plugin_dir_path( __FILE__ );
-		$this->version 			= '1.2.11';
+		$this->version 			= '1.2.13';
 
 		register_activation_hook( __FILE__, array( $this, 'install' ) );
 
@@ -206,7 +206,7 @@ final class Storefront_Product_Hero {
 	public function sprh_setup() {
 		$theme = wp_get_theme();
 
-		if ( 'Storefront' == $theme->name || 'storefront' == $theme->template && apply_filters( 'storefront_product_hero_enabled', true ) ) {
+		if ( class_exists( 'WooCommerce' ) && ( 'Storefront' == $theme->name || 'storefront' == $theme->template ) && apply_filters( 'storefront_product_hero_enabled', true ) ) {
 			add_action( 'wp_enqueue_scripts', array( $this, 'sprh_styles' ), 999 );
 			add_action( 'wp_enqueue_scripts', array( $this, 'sprh_scripts' ), 999 );
 			add_action( 'customize_register', array( $this, 'sprh_customize_register' ) );
@@ -775,6 +775,13 @@ final class Storefront_Product_Hero {
 
 		$stellar = '';
 
+		// Get product
+		$product_data = wc_get_product( $product_id );
+
+		if ( ! $product_data ) {
+			return;
+		}
+
 		if ( true == $parallax ) {
 			wp_enqueue_script( 'sprh-script' );
 			wp_enqueue_script( 'sprh-stellar' );
@@ -789,10 +796,7 @@ final class Storefront_Product_Hero {
 			wp_enqueue_script( 'sprh-full-height' );
 		}
 
-		$product_data = new WC_Product( $product_id );
-
 		// Display the product hero only when a product has been set.
-		if ( 'default' != $product_id ) {
 		?>
 		<section data-stellar-vertical-offset="<?php echo intval( $parallax_offset ); ?>" <?php echo $stellar; ?> class="sprh-hero <?php echo 'sprh-layout-' . $layout . ' ' . $width . ' ' . $full_height_class; ?>" style="<?php echo $style; ?>background-image: url(<?php echo $background_img; ?>); background-color: <?php echo $background_color; ?>; color: <?php echo $description_text_color; ?>; background-size: <?php echo $background_size; ?>;">
 			<div class="overlay" style="background-color: rgba(<?php echo $r . ', ' . $g . ', ' . $b . ', ' . $overlay_opacity; ?>);<?php echo $overlay_style; ?>">
@@ -810,7 +814,7 @@ final class Storefront_Product_Hero {
 
 					<div class="sprh-hero-content-wrapper">
 
-						<h1 style="color: <?php echo $heading_text_color; ?>;">
+						<h3 style="color: <?php echo $heading_text_color; ?>;">
 							<?php
 								if ( '' != $heading_text ) {
 									echo $heading_text;
@@ -818,7 +822,7 @@ final class Storefront_Product_Hero {
 									echo $product_data->get_title();
 								}
 							?>
-						</h1>
+						</h3>
 
 						<div class="sprh-hero-content">
 							<?php
@@ -855,7 +859,6 @@ final class Storefront_Product_Hero {
 			</div>
 		</section>
 		<?php
-		}
 	}
 
 	/**

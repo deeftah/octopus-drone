@@ -16,7 +16,8 @@ body,
     margin: 0 auto 1.618em; }
   .sprh-hero p.more-details,
   .sprh-hero p.add_to_cart_inline {
-    display: block; }
+    display: block;
+    text-align: left; }
   .sprh-hero p.add_to_cart_inline {
     border: 0 !important;
     padding: 0 !important;
@@ -48,8 +49,11 @@ body,
   margin-left: auto;
   margin-right: auto; }
 
-.sprh-hero h1 {
-  font-weight: 700; }
+.sprh-hero h3 {
+  font-weight: 700;
+  font-size: 2.617924em;
+  line-height: 1.214;
+  letter-spacing: -1px; }
 
 .sprh-hero p:last-child {
   margin-bottom: 0; }
@@ -69,15 +73,15 @@ body,
   .sprh-hero .overlay {
     padding: 9.505em; }
   .sprh-hero.left p,
-  .sprh-hero.left h1 {
+  .sprh-hero.left h3 {
     margin-left: 0;
     margin-right: 40%; }
   .sprh-hero.right p,
-  .sprh-hero.right h1 {
+  .sprh-hero.right h3 {
     margin-right: 0;
     margin-left: 40%; }
   .sprh-hero p,
-  .sprh-hero h1 {
+  .sprh-hero h3 {
     margin-left: 10%;
     margin-right: 10%; }
   .sprh-hero.sprh-layout-left,
@@ -92,11 +96,11 @@ body,
     .sprh-hero.sprh-layout-right .col-full:after {
       clear: both; }
     .sprh-hero.sprh-layout-left p,
-    .sprh-hero.sprh-layout-left h1,
+    .sprh-hero.sprh-layout-left h3,
     .sprh-hero.sprh-layout-left .sprh-featured-image img,
     .sprh-hero.sprh-layout-left .star-rating,
     .sprh-hero.sprh-layout-right p,
-    .sprh-hero.sprh-layout-right h1,
+    .sprh-hero.sprh-layout-right h3,
     .sprh-hero.sprh-layout-right .sprh-featured-image img,
     .sprh-hero.sprh-layout-right .star-rating {
       margin-left: 0;
@@ -165,35 +169,35 @@ body,
     margin-left: 0;
     margin-right: 0; }
   body:not(.page-template-template-fullwidth-php) .entry-content .sprh-hero.sprh-layout-left p,
-  body:not(.page-template-template-fullwidth-php) .entry-content .sprh-hero.sprh-layout-left h1,
+  body:not(.page-template-template-fullwidth-php) .entry-content .sprh-hero.sprh-layout-left h3,
   body:not(.page-template-template-fullwidth-php) .entry-content .sprh-hero.sprh-layout-right p,
-  body:not(.page-template-template-fullwidth-php) .entry-content .sprh-hero.sprh-layout-right h1,
+  body:not(.page-template-template-fullwidth-php) .entry-content .sprh-hero.sprh-layout-right h3,
   body:not(.page-template-template-fullwidth-php) .entry-content .sprh-hero.sprh-layout-center p,
-  body:not(.page-template-template-fullwidth-php) .entry-content .sprh-hero.sprh-layout-center h1,
+  body:not(.page-template-template-fullwidth-php) .entry-content .sprh-hero.sprh-layout-center h3,
   body:not(.storefront-full-width-content) .entry-content .sprh-hero.sprh-layout-left p,
-  body:not(.storefront-full-width-content) .entry-content .sprh-hero.sprh-layout-left h1,
+  body:not(.storefront-full-width-content) .entry-content .sprh-hero.sprh-layout-left h3,
   body:not(.storefront-full-width-content) .entry-content .sprh-hero.sprh-layout-right p,
-  body:not(.storefront-full-width-content) .entry-content .sprh-hero.sprh-layout-right h1,
+  body:not(.storefront-full-width-content) .entry-content .sprh-hero.sprh-layout-right h3,
   body:not(.storefront-full-width-content) .entry-content .sprh-hero.sprh-layout-center p,
-  body:not(.storefront-full-width-content) .entry-content .sprh-hero.sprh-layout-center h1,
+  body:not(.storefront-full-width-content) .entry-content .sprh-hero.sprh-layout-center h3,
   .textwidget .sprh-hero.sprh-layout-left p,
-  .textwidget .sprh-hero.sprh-layout-left h1,
+  .textwidget .sprh-hero.sprh-layout-left h3,
   .textwidget .sprh-hero.sprh-layout-right p,
-  .textwidget .sprh-hero.sprh-layout-right h1,
+  .textwidget .sprh-hero.sprh-layout-right h3,
   .textwidget .sprh-hero.sprh-layout-center p,
-  .textwidget .sprh-hero.sprh-layout-center h1,
+  .textwidget .sprh-hero.sprh-layout-center h3,
   .page-description .sprh-hero.sprh-layout-left p,
-  .page-description .sprh-hero.sprh-layout-left h1,
+  .page-description .sprh-hero.sprh-layout-left h3,
   .page-description .sprh-hero.sprh-layout-right p,
-  .page-description .sprh-hero.sprh-layout-right h1,
+  .page-description .sprh-hero.sprh-layout-right h3,
   .page-description .sprh-hero.sprh-layout-center p,
-  .page-description .sprh-hero.sprh-layout-center h1,
+  .page-description .sprh-hero.sprh-layout-center h3,
   .term-description .sprh-hero.sprh-layout-left p,
-  .term-description .sprh-hero.sprh-layout-left h1,
+  .term-description .sprh-hero.sprh-layout-left h3,
   .term-description .sprh-hero.sprh-layout-right p,
-  .term-description .sprh-hero.sprh-layout-right h1,
+  .term-description .sprh-hero.sprh-layout-right h3,
   .term-description .sprh-hero.sprh-layout-center p,
-  .term-description .sprh-hero.sprh-layout-center h1 {
+  .term-description .sprh-hero.sprh-layout-center h3 {
     margin-left: 0;
     margin-right: 0; }
   /**

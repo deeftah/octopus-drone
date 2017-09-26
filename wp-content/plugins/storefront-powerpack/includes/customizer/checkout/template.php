@@ -99,12 +99,13 @@ if ( ! function_exists( 'sp_fire_flexslider' ) ) {
 		<script>
 		jQuery( window ).load(function() {
 			jQuery( '.checkout-slides' ).flexslider({
-				selector: 		'.sp-two-step-checkout > li',
-				slideshow: 		false,
-				prevText: 		'<?php esc_html_e( 'Back to my details', 'storefront-powerpack' ); ?>',
-				nextText: 		'<?php esc_html_e( 'Proceed to payment', 'storefront-powerpack' ); ?>',
-				animationLoop: 	false,
+				selector:       '.sp-two-step-checkout > li',
+				slideshow:      false,
+				prevText:       '<?php esc_html_e( 'Back to my details', 'storefront-powerpack' ); ?>',
+				nextText:       '<?php esc_html_e( 'Proceed to payment', 'storefront-powerpack' ); ?>',
+				animationLoop:  false,
 				manualControls: '.sp-checkout-control-nav li a',
+				keyboard:       false,
 			});
 
 			jQuery( '.flex-direction-nav a' ).removeAttr( 'href' ).addClass( 'button' );

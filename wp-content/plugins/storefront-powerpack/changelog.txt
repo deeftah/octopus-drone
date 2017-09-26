@@ -1,5 +1,12 @@
 *** Storefront Powerpack Changelog ***
 
+2017.09.25 - version 1.4.3
+* Tweak - Use absolute paths on assets enqueues for better compatibility with other plugins.
+
+2017.08.14 - version 1.4.2
+* Fix - Fixes output of short description option in Shop page.
+* Fix - Disable keyboard navigation in Checkout when using the "Two Step Checkout" option.
+
 2017.06.23 - version 1.4.1
 * Fix - Sticky Header scroll when there's a checkout error.
 * Fix - Hide gallery option in single product pages.

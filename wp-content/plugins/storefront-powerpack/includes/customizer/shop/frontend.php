@@ -56,7 +56,7 @@ if ( ! class_exists( 'SP_Frontend_Shop' ) ) :
 			$archive_price               = get_theme_mod( 'sp_product_archive_price',         true );
 			$archive_add_to_cart         = get_theme_mod( 'sp_product_archive_add_to_cart',   true );
 			$archive_product_description = get_theme_mod( 'sp_product_archive_description',   false );
-			$archive_titles              = get_theme_mod( 'sp_product_archive_title',         true );			
+			$archive_titles              = get_theme_mod( 'sp_product_archive_title',         true );
 			$infinite_scroll             = get_theme_mod( 'sp_infinite_scroll',               false );
 
 
@@ -172,7 +172,7 @@ if ( ! class_exists( 'SP_Frontend_Shop' ) ) :
 		public function script() {
 			$infinite_scroll = get_theme_mod( 'sp_infinite_scroll', false );
 
-			wp_enqueue_style( 'sp-styles', plugins_url( '../../../assets/css/style.css', __FILE__ ), '', storefront_powerpack()->version );
+			wp_enqueue_style( 'sp-styles', SP_PLUGIN_URL . 'assets/css/style.css', '', storefront_powerpack()->version );
 			wp_style_add_data( 'sp-styles', 'rtl', 'replace' );
 
 			/**
@@ -181,8 +181,8 @@ if ( ! class_exists( 'SP_Frontend_Shop' ) ) :
 			 */
 			if ( true === $infinite_scroll && ! ( class_exists( 'Jetpack' ) && Jetpack::is_module_active( 'infinite-scroll' ) ) ) {
 				if ( is_shop() || is_product_taxonomy() || is_product_category() || is_product_tag() ) {
-					wp_enqueue_script( 'jscroll', plugins_url( '../../../assets/js/jquery.jscroll.min.js', __FILE__ ), array( 'jquery' ) );
-					wp_enqueue_script( 'jscroll-init', plugins_url( '../../../assets/js/jscroll-init.min.js', __FILE__ ), array( 'jscroll' ) );
+					wp_enqueue_script( 'jscroll', SP_PLUGIN_URL . 'assets/js/jquery.jscroll.min.js', array( 'jquery' ) );
+					wp_enqueue_script( 'jscroll-init', SP_PLUGIN_URL . 'assets/js/jscroll-init.min.js', array( 'jscroll' ) );
 				}
 			}
 		}

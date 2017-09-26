@@ -72,14 +72,14 @@ if ( ! class_exists( 'SP_Customizer_Header' ) ) :
 		 * @return  void
 		 */
 		public function scripts() {
-			wp_enqueue_style( 'sp-header-css', plugins_url( '/assets/css/sp-header.css', __FILE__ ), array(), storefront_powerpack()->version, 'all' );
+			wp_enqueue_style( 'sp-header-css', SP_PLUGIN_URL . 'includes/customizer/header/assets/css/sp-header.css', array(), storefront_powerpack()->version, 'all' );
 
 			// Gridstack
-			wp_enqueue_style( 'sp-gridstack', plugins_url( '/assets/js/vendor/gridstack.min.css', __FILE__ ), array(), storefront_powerpack()->version, 'all' );
-			wp_enqueue_script( 'sp-gridstack', plugins_url( '/assets/js/vendor/gridstack.min.js', __FILE__ ), array( 'jquery', 'jquery-ui-draggable', 'jquery-ui-resizable', 'jquery-ui-widget', 'jquery-ui-mouse', 'underscore' ), storefront_powerpack()->version );
+			wp_enqueue_style( 'sp-gridstack', SP_PLUGIN_URL . 'includes/customizer/header/assets/js/vendor/gridstack.min.css', array(), storefront_powerpack()->version, 'all' );
+			wp_enqueue_script( 'sp-gridstack', SP_PLUGIN_URL . 'includes/customizer/header/assets/js/vendor/gridstack.min.js', array( 'jquery', 'jquery-ui-draggable', 'jquery-ui-resizable', 'jquery-ui-widget', 'jquery-ui-mouse', 'underscore' ), storefront_powerpack()->version );
 
 			$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
-			wp_enqueue_script( 'sp-header', plugins_url( '/assets/js/sp-header' . $suffix . '.js', __FILE__ ), array( 'jquery', 'wp-backbone', 'customize-controls' ), storefront_powerpack()->version, true );
+			wp_enqueue_script( 'sp-header', SP_PLUGIN_URL . 'includes/customizer/header/assets/js/sp-header' . $suffix . '.js', array( 'jquery', 'wp-backbone', 'customize-controls' ), storefront_powerpack()->version, true );
 		}
 
 		/**

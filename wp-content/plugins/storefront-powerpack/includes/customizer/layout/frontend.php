@@ -54,7 +54,7 @@ if ( ! class_exists( 'SP_Frontend_Layout' ) ) :
 		 */
 		public function script() {
 			if ( 'max-width' === get_theme_mod( 'sp_max_width' ) || 'frame' === get_theme_mod( 'sp_content_frame' ) ) {
-				wp_enqueue_style( 'sp-layout', plugins_url( 'assets/css/layout.css', __FILE__ ), '', storefront_powerpack()->version );
+				wp_enqueue_style( 'sp-layout', SP_PLUGIN_URL . 'includes/customizer/layout/assets/css/layout.css', '', storefront_powerpack()->version );
 			}
 		}
 

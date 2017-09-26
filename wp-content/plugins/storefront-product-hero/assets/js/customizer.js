@@ -7,7 +7,7 @@
 ( function( $ ) {
 	wp.customize( 'sprh_heading_color', function( value ) {
 		value.bind( function( to ) {
-			$( '.sprh-hero h1' ).css( 'color', to );
+			$( '.sprh-hero h3' ).css( 'color', to );
 		} );
 	} );
 

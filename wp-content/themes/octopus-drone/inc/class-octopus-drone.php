@@ -45,7 +45,7 @@ if (! class_exists('Octopus_Drone')) :
         {
             global $octopus_drone_version;
 
-            wp_enqueue_style('octopus-drone-style', get_stylesheet_directory_uri() . '/assets/css/app.min.css', $octopus_drone_version);
+            wp_enqueue_style('octopus-drone-style', get_stylesheet_directory_uri() . '/app.min.css', $octopus_drone_version);
         }
 
         /**
@@ -67,7 +67,7 @@ if (! class_exists('Octopus_Drone')) :
     		 * Custom navigation markup template hooked into `navigation_markup_template` filter hook.
     		 */
     		public function navigation_markup_template() {
-    			$template  = '<nav id="post-navigation" class="navigation %1$s" aria-label="' . esc_html__( 'Post Navigation', 'storefront' ) . '">';
+    			$template  = '<nav id="post-navigation" class="navigation %1$s" aria-label="' . esc_html__( 'Post Navigation', 'octopus-drone' ) . '">';
     			$template .= '<span class="screen-reader-text">%2$s</span>';
     			$template .= '<div class="nav-links">%3$s</div>';
     			$template .= '</nav>';

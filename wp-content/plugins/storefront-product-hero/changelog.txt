@@ -1,5 +1,12 @@
 *** Storefront Product Hero Changelog ***
 
+2017.09.21 - version 1.2.13
+* Tweak - Replace H1 with H3 tags.
+* Fix - Alignment of buttons on handheld devices.
+
+2017.06.12 - version 1.2.12
+* Fix - Prevent errors if WooCommerce is not installed.
+
 2017.06.01 - version 1.2.11
 * Fix - Add to cart notice appearing behind Product Hero on homepage.
 

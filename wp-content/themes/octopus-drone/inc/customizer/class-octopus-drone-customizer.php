@@ -51,20 +51,20 @@ if (! class_exists('Octopus_Drone_Customizer')) :
         public function octopus_drone_defaults()
         {
             return [
-            //     'storefront_heading_color'                    => '#333333',
-            //     'storefront_footer_heading_color'            => '#333333',
-            //     'storefront_header_background_color'        => '#333333',
-            //     'storefront_header_link_color'                => '#aaaaaa',
-            //     'storefront_header_text_color'                => '#878787',
-            //     'storefront_footer_link_color'                => '#666666',
-            //     'storefront_text_color'                        => '#666666',
-            //     'storefront_footer_text_color'                => '#666666',
-                 'storefront_accent_color'                    => '#673ab7',
-            'storefront_button_background_color'        => '#43454b',
-            //     'storefront_button_text_color'                => '#ffffff',
-            //     'storefront_button_alt_background_color'    => '#F34418',
-            //     'storefront_button_alt_text_color'            => '#ffffff',
-                 'background_color'                            => '#cfd8dc'
+            //     'storefront_heading_color'                 => '#333333',
+            //     'storefront_footer_heading_color'          => '#333333',
+            //     'storefront_header_background_color'       => '#333333',
+            //     'storefront_header_link_color'             => '#aaaaaa',
+            //     'storefront_header_text_color'             => '#878787',
+            //     'storefront_footer_link_color'             => '#666666',
+            //     'storefront_text_color'                    => '#666666',
+            //     'storefront_footer_text_color'             => '#666666',
+            'storefront_accent_color'                       => '#673ab7',
+            'storefront_button_background_color'            => '#43454b',
+            //     'storefront_button_text_color'             => '#ffffff',
+            //     'storefront_button_alt_background_color'   => '#F34418',
+            //     'storefront_button_alt_text_color'         => '#ffffff',
+            'background_color'                              => '#cfd8dc'
             ];
         }
 

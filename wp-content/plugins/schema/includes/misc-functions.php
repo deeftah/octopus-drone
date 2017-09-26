@@ -138,6 +138,40 @@ function schema_wp_cpt_get_enabled_post_types() {
 
 
 /**
+ * Get schema ref by post type in admin page editor screen
+ *
+ * @since 1.6.9.3
+ * @return array of enabled post types, schema type
+ */
+function schema_wp_get_ref_by_post_type( $post_type = null ) {
+	
+	global $wpdb, $post;
+	
+	if ( ! isset($post_type) ) {
+		// Get post type from current screen
+		$current_screen = get_current_screen();
+		$post_type = $current_screen->post_type;
+	}
+	
+	$schema_posts = $wpdb->get_results ( "
+    	SELECT * 
+    	FROM  $wpdb->posts
+        WHERE post_type = 'schema'
+	" );
+	
+	//echo '<pre>'; print_r($schema_posts); echo '</pre>';exit;
+	if ( empty($schema_posts) ) return false;
+	 
+	foreach ( $schema_posts as $key => $post ) {
+		$supported_types = get_post_meta( $post->ID, '_schema_post_types', true );
+		if ( ! empty($supported_types) && in_array( $post_type, $supported_types, true ) ) {
+			return $post->ID;
+		}	
+	}
+}
+
+
+/**
  * Get an array of enabled post types
  *
  * @since 1.4
@@ -337,8 +371,6 @@ function schema_wp_get_support_article_types() {
 	
 	return apply_filters( 'schema_wp_support_article_types', $support_article_types );
 }
-
-
 
 
 /**

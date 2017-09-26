@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 
 /**
- * Post Neta Generator Class
+ * Post Meta Generator Class
  *
  * @since 1.5.9
  */

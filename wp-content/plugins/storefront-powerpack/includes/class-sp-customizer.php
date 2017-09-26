@@ -44,7 +44,7 @@ if ( ! class_exists( 'SP_Customizer' ) ) :
 		 * @since 1.0.0
 		 */
 		final public function customizer_enqueue() {
-			wp_enqueue_style( 'sp-customizer', plugins_url( '../assets/css/customizer.css', __FILE__ ), array(), storefront_powerpack()->version, 'all' );
+			wp_enqueue_style( 'sp-customizer', SP_PLUGIN_URL . 'assets/css/customizer.css', array(), storefront_powerpack()->version, 'all' );
 		}
 
 		/**
