@@ -11,3 +11,9 @@ nav {
     display: none;
   }
 }
+
+@media screen and (max-width: $break-small) {
+  .site-header {
+    padding-top: .5em !important;
+  }
+}
