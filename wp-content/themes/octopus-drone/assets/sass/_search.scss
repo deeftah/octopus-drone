@@ -1,0 +1,19 @@
+@charset 'UTF-8';
+
+@media screen and (max-width: $break-small) {
+  .site-search {
+    background-color: $primary;
+    border: 0 !important;
+    border-radius: 0 !important;
+    display: block !important;
+    left: -1.6em;
+    padding: 1.41575em 1.41575em .707875em !important;
+    position: absolute;
+    top: 3.1em;
+    width: 100vw;
+
+    form {
+      margin: 0 !important;
+    }
+  }
+}

@@ -1,5 +1,13 @@
 @charset 'UTF-8';
 
+// Media Queries
+
+$break-small: 450px;
+$break-medium: 768px;
+$break-large: 1024px;
+
+// Base
+
 $white: #fff;
 $black: #000;
 $primary: #ff5722;

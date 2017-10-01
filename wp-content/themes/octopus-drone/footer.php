@@ -13,6 +13,7 @@
 	<?php do_action( 'storefront_before_footer' ); ?>
 	<footer id="colophon" class="site-footer">
 		<div class="col-full">
+			<?php echo get_num_queries(); ?> queries in <?php timer_stop(1); ?> seconds.
 
 			<?php
 			/**

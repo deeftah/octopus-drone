@@ -1,0 +1,27 @@
+@charset 'UTF-8';
+
+.handheld-navigation {
+  border-right: 0 !important;
+
+  i {
+    margin-right: 1em;
+  }
+  
+  .shm-close {
+    border: 0 !important;
+    display: none !important;
+  }
+
+  .social-mobile {
+    bottom: 1em;
+    font-family: 'FontAwesome';
+    font-weight: 400;
+    position: fixed;
+    text-align: center;
+    width: 80%;
+
+    li {
+      display: inline-block;
+    }
+  }
+}

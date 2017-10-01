@@ -192,7 +192,6 @@ if (! function_exists('octopus_drone_site_title_or_logo')) {
     function octopus_drone_site_title_or_logo($echo = true)
     {
         if (function_exists('the_custom_logo') && has_custom_logo()) {
-
             $tag = is_front_page() ? 'h1' : 'div';
 
             $logo_id = get_theme_mod('custom_logo'); // Check for WP 4.5 Site Logo
@@ -258,29 +257,122 @@ if (! function_exists('storefront_primary_navigation')) {
      */
     function storefront_primary_navigation()
     {
-        ?>
+      global $woocommerce;
+      ?>
 		<nav id="site-navigation" class="main-navigation" aria-label="<?php esc_html_e('Primary Navigation', 'octopus-drone'); ?>">
     <h2 aria-hidden="true"><?php echo esc_attr(apply_filters('storefront_menu_toggle_text', __('Main Menu', 'octopus-drone'))); ?></h2>
-		<button class="menu-toggle" aria-controls="site-navigation" aria-expanded="false" aria-label="<?php echo esc_attr(apply_filters('storefront_menu_toggle_text', __('Menu', 'octopus-drone'))); ?>" aria-controls="navigation"><span></span></button>
-			<?php
-            wp_nav_menu(
-                array(
-                    'theme_location'    => 'primary',
-                    'container_class'    => 'primary-navigation',
-                    )
-            );
+		<button class="menu-toggle" aria-controls="site-navigation" aria-expanded="false" aria-label="<?php echo esc_attr(apply_filters('storefront_menu_toggle_text', __('Menu', 'octopus-drone'))); ?>"><span></span></button>
+    <a class="cart-mobile" aria-label="<?php echo esc_attr(apply_filters('storefront_menu_toggle_text', __('Cart', 'octopus-drone'))); ?>" href="<?php echo $woocommerce->cart->get_cart_url(); ?>"><i class="fa fa-shopping-basket"></i></a>
+    	<?php
+        wp_nav_menu(
+          array(
+            'container_class'    => 'primary-navigation',
+            'theme_location'    => 'primary',
+          )
+        );
 
         wp_nav_menu(
-                array(
-                    'theme_location'    => 'handheld',
-                    'container_class'    => 'handheld-navigation',
-                    )
-            ); ?>
+          array(
+            'container_class'   => 'handheld-navigation',
+            'fallback_cb'       =>false,
+            'items_wrap'      => user_handheld_navigation().'<ul id="%1$s" class="%2$s">%3$s</ul>'.social_handheld_navigation(),
+            'theme_location'    => 'handheld',
+            'walker'            => new Nav_Footer_Walker()
+          )
+        ); ?>
 		</nav><!-- #site-navigation -->
 		<?php
 
     }
 }
+
+if (! function_exists('user_handheld_navigation')) {
+    /**
+   * Display User Navigation
+   *
+   * @since  1.0.0
+   * @return void
+   */
+  function user_handheld_navigation()
+  {
+      $current_user = wp_get_current_user();
+      $user = '<div class="user-mobile">';
+      $user .= get_avatar($current_user->user_email, '50', '', $current_user->user_firstname.' '. $current_user->user_lastname, $args);
+      $user .= '<strong>'.$current_user->user_firstname.' '. $current_user->user_lastname . '</strong><br />';
+      $user .= $current_user->user_email . '<br />';
+      $user .= '</div>';
+
+      return $user;
+  }
+}
+
+if (! function_exists('social_handheld_navigation')) {
+    /**
+   * Display User Navigation
+   *
+   * @since  1.0.0
+   * @return void
+   */
+  function social_handheld_navigation()
+  {
+      $social = get_option('wpseo_social');
+    // echo '<pre>';
+    // print_r($socials);
+    // echo '</pre>';
+
+    $social_link = '<ul class="social-mobile">';
+      if ($social['facebook_site']) {
+          $social_link .= '<li><a class="fa fa-facebook" href="'.$social['facebook_site'].'" alt="'.__('Join Our Facebook Page', 'octopus-drone').'"><span class="show-for-sr">Facebook</span></a></li>';
+      }
+      if ($social['twitter_site']) {
+          $social_link .= '<li><a class="fa fa-twitter" href="'.$social['twitter_site'].'" alt="'.__('Follow Our Twitter Account', 'octopus-drone').'"><span class="show-for-sr">Twitter</span></a></li>';
+      }
+      if ($social['instagram_url']) {
+          $social_link .= '<li><a class="fa fa-instagram" href="'.$social['instagram_url'].'" alt="'.__('Follow Our Instagram Account', 'octopus-drone').'"><span class="show-for-sr">Instagram</span></a></li>';
+      }
+
+      $social_link .= '</ul>';
+
+      return $social_link;
+  }
+}
+
+/**
+ * Custom walker class.
+ */
+ class Nav_Footer_Walker extends Walker_Nav_Menu
+ {
+     public function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0)
+     {
+         $indent = ($depth) ? str_repeat("\t", $depth) : '';
+         $class_names = $value = '';
+         $classes = empty($item->classes) ? array() : (array) $item->classes;
+         $classes[] = 'menu-item-' . $item->ID;
+         $class_names = join(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item, $args));
+         $class_names = $class_names ? ' class="' . esc_attr($class_names) . '"' : '';
+         $id = apply_filters('nav_menu_item_id', 'menu-item-'. $item->ID, $item, $args);
+         $id = $id ? ' id="' . esc_attr($id) . '"' : '';
+         $output .= $indent . '';
+         $attributes  = ! empty($item->attr_title) ? ' title="'  . esc_attr($item->attr_title) .'"' : '';
+         $attributes .= ! empty($item->target)     ? ' target="' . esc_attr($item->target) .'"' : '';
+         $attributes .= ! empty($item->xfn)        ? ' rel="'    . esc_attr($item->xfn) .'"' : '';
+         $attributes .= ! empty($item->url)        ? ' href="'   . esc_attr($item->url) .'"' : '';
+         $item_output = $args->before;
+         $item_output .= '<li><a'. $attributes .'>';
+         $item_output .= '<i '.$class_names.' aria-hidden="true"></i>';
+         $item_output .= $args->link_before . apply_filters('the_title', $item->title, $item->ID) . $args->link_after;
+         $item_output .= '</a></li>';
+         $item_output .= $args->after;
+         $output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
+     }
+
+     public function end_el(&$output, $item, $depth = 0, $args = array())
+     {
+         $output .= "\n";
+     }
+ }
+
+
 
 if (! function_exists('storefront_secondary_navigation')) {
     /**
@@ -944,19 +1036,21 @@ if (! function_exists('storefront_primary_navigation_wrapper_close')) {
     }
 }
 
-function remove_storefront_handheld_footer_bar() {
-  remove_action( 'storefront_footer', 'storefront_handheld_footer_bar', 999 );
+function remove_storefront_handheld_footer_bar()
+{
+    remove_action('storefront_footer', 'storefront_handheld_footer_bar', 999);
 }
 
-function remove_woocommerce_shop_loop_item_title() {
-  remove_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10 );
+function remove_woocommerce_shop_loop_item_title()
+{
+    remove_action('woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10);
 }
 
-function octopus_drone_woocommerce_shop_loop_item_title() {
-  if (is_front_page()) {
-    echo '<h3 class="woocommerce-loop-product__title">' . get_the_title() . '</h3>';
-  } else {
-    echo '<h2 class="woocommerce-loop-product__title">' . get_the_title() . '</h2>';
-  }
-
+function octopus_drone_woocommerce_shop_loop_item_title()
+{
+    if (is_front_page()) {
+        echo '<h3 class="woocommerce-loop-product__title">' . get_the_title() . '</h3>';
+    } else {
+        echo '<h2 class="woocommerce-loop-product__title">' . get_the_title() . '</h2>';
+    }
 }

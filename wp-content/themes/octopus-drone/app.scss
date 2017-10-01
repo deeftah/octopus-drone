@@ -14,8 +14,14 @@
 
 @import 'assets/sass/base/base';
 @import 'assets/sass/header';
+
+@import 'assets/sass/topbar';
+@import 'assets/sass/menu';
+@import 'assets/sass/user';
+@import 'assets/sass/search';
 @import 'assets/sass/product';
 @import 'assets/sass/currency';
+@import 'assets/sass/cart';
 @import 'assets/sass/footer';
 
 // @todo need to be clean

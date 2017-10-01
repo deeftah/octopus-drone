@@ -1,7 +1,9 @@
+@charset 'UTF-8';
+
 .pace-progress {
-  background-color: #bf360c;
+  background-color: $primary-dark;
   height: .3em;
-  z-index: 99999;
   position: absolute;
   width: 100vh;
+  z-index: 99999;
 }

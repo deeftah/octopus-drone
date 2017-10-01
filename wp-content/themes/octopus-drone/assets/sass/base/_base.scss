@@ -8,6 +8,10 @@ input {
   border-radius: 3px;
 }
 
+.show-for-sr {
+  display: none;
+}
+
 .page-template-template-homepage:not(.has-post-thumbnail) .site-main {
     padding-top: 0 !important;
 }
