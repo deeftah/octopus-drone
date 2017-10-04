@@ -261,7 +261,11 @@ if (! function_exists('storefront_primary_navigation')) {
       ?>
 		<nav id="site-navigation" class="main-navigation" aria-label="<?php esc_html_e('Primary Navigation', 'octopus-drone'); ?>">
     <h2 aria-hidden="true"><?php echo esc_attr(apply_filters('storefront_menu_toggle_text', __('Main Menu', 'octopus-drone'))); ?></h2>
-		<button class="menu-toggle" aria-controls="site-navigation" aria-expanded="false" aria-label="<?php echo esc_attr(apply_filters('storefront_menu_toggle_text', __('Menu', 'octopus-drone'))); ?>"><span></span></button>
+    <button id="menu-mobile" class="hamburger hamburger--elastic" type="button" aria-label="Menu" aria-controls="navigation">
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </button>
     <a class="cart-mobile" aria-label="<?php echo esc_attr(apply_filters('storefront_menu_toggle_text', __('Cart', 'octopus-drone'))); ?>" href="<?php echo $woocommerce->cart->get_cart_url(); ?>"><i class="fa fa-shopping-basket"></i></a>
     	<?php
         wp_nav_menu(

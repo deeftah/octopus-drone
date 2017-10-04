@@ -57,6 +57,10 @@ if (! class_exists('Octopus_Drone')) :
         {
             global $storefront_version, $octopus_drone_version;
 
+            wp_register_script('swipe', get_stylesheet_directory_uri() . '/assets/js/jquery.touchSwipe.min.js', ['jquery'], $octopus_drone_version, true);
+            wp_enqueue_script('swipe');
+            wp_register_script('swipe_lib', get_stylesheet_directory_uri() . '/assets/js/swipe.lib.js', ['jquery', 'swipe'], $octopus_drone_version, true);
+            wp_enqueue_script('swipe_lib');
             wp_register_script('pace_lib', get_stylesheet_directory_uri() . '/assets/js/pace.min.js', [], $octopus_drone_version, true);
             wp_enqueue_script('pace_lib');
             wp_register_script('pace_script', get_stylesheet_directory_uri() . '/assets/js/pace-lib.min.js', ['pace_lib'], $octopus_drone_version, true);

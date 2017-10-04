@@ -26,8 +26,28 @@
   }
 }
 
+.toggled {
+  .handheld-navigation {
+    transition: right .2s;
+  }
+}
+
 @media screen and (max-width: $break-small) {
   .main-navigation {
       margin-bottom: .5em !important;
+  }
+}
+
+#menu-mobile {
+  background-color: transparent;
+
+  &.is-active::after {
+    background-color: rgba($black, .5);
+    content: '';
+    height: 100vh;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100vw;
   }
 }
