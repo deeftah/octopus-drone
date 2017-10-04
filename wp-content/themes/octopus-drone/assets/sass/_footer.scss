@@ -1,1 +1,16 @@
 @charset 'UTF-8';
+
+@media screen and (max-width: $break-small) {
+  .site-footer {
+    padding: 0 !important;
+
+    .footer-widgets {
+      display: none !important;
+    }
+    .site-info {
+      font-size: .8em !important;
+      padding: .5em !important;
+      text-align: center !important;
+    }
+  }
+}
